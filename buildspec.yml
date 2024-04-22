@@ -6,11 +6,9 @@ phases:
       python: 3.8
   build:
     commands:
-      - pip install -r requirements.txt -t .
-  post_build:
-    commands:
-      - aws cloudformation package --template-file template.yaml --s3-bucket my-cloudformation-artifacts --output-template-file packaged-template.yaml
+      - echo "Build started on `date`"
+      - echo "Build completed on `date`"
 
 artifacts:
   files:
-    - packaged-template.yaml
+    - template.yaml
